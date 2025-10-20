@@ -75,7 +75,7 @@ const FeaturesSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Featured Video */}
-          <div className="relative rounded-2xl overflow-hidden h-[650px] group">
+          <div className="relative rounded-2xl overflow-hidden h-[400px] md:h-[650px] group">
             <video
               src={testVideo}
               muted
@@ -155,7 +155,7 @@ const FeaturesSection = () => {
               {currentContent.cards.map((card, index) => (
                 <div
                   key={index}
-                  className="relative rounded-xl overflow-hidden group cursor-pointer aspect-[3/4]"
+                  className="relative rounded-xl overflow-hidden group cursor-pointer aspect-square sm:aspect-[3/4]"
                 >
                   <img
                     src={card.image}
