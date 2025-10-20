@@ -1,21 +1,21 @@
-import { useState, useRef } from 'react';
+// import { useState, useRef } from 'react';
 import testVideo  from  "../../../assets/videoTest.mp4"
 
 
 const FashionCollectionSection = () => {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  // const videoRef = useRef<HTMLVideoElement | null>(null);
+  // const [isPlaying, setIsPlaying] = useState(false);
 
-  const handlePlayPause = () => {
-    if (!videoRef.current) return;
-    if (isPlaying) {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    } else {
-      videoRef.current.play();
-      setIsPlaying(true);
-    }
-  };
+  // const handlePlayPause = () => {
+  //   if (!videoRef.current) return;
+  //   if (isPlaying) {
+  //     videoRef.current.pause();
+  //     setIsPlaying(false);
+  //   } else {
+  //     videoRef.current.play();
+  //     setIsPlaying(true);
+  //   }
+  // };
 
    const collections = [
     {
@@ -44,9 +44,9 @@ const FashionCollectionSection = () => {
           {/* Left Side - Featured Video */}
           <div className="relative rounded-2xl overflow-hidden h-[600px] group">
             <video
-              ref={videoRef}
               src={testVideo}
               muted
+              autoPlay
               loop
               className="w-full h-full object-cover"
             >
@@ -67,7 +67,7 @@ const FashionCollectionSection = () => {
               </p>
             </div>
 
-            {!isPlaying && (
+            {/* {!isPlaying && (
               <button
                 onClick={handlePlayPause}
                 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 group-hover:scale-110 transition-transform duration-300"
@@ -82,7 +82,7 @@ const FashionCollectionSection = () => {
                   </svg>
                 </div>
               </button>
-            )}
+            )} */}
           </div>
 
           {/* Right Side - Content & Collections */}
