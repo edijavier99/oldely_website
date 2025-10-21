@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import testVideo from "../../../assets/videoTest.mp4";
+import testVideo from "../../../assets/videoTest2.mp4";
+import sosimage from "../../../assets/sos.jpg"
 
 type Card = {
   title: string;
@@ -28,17 +29,17 @@ const FeaturesSection = () => {
     {
       title: "Emergency Response",
       description: "One-touch SOS button and automatic fall detection that instantly alerts family members",
-      image: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=800",
+      image: sosimage,
     },
     {
       title: "Voice Command Center", 
       description: "Call family or listen to messages using simple voice commands - no buttons or complicated screen to remember",
-      image: "https://images.unsplash.com/photo-1583391738853-47b205ec5d1c?auto=format&fit=crop&q=80&w=800",
+      image: "https://images.unsplash.com/photo-1635357558257-11a5394b9b7e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fHNtYXJ0JTIwYmFuZCUyMG9uJTIwd3Jpc3R8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=900",
     },
     {
       title: "Always-On Protection",
       description: "Continuous monitoring that works discreetly in the background, respecting their privacy",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800",
+      image: "https://images.unsplash.com/photo-1648560041861-85c6fd3fe2fd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&q=60&w=900",
     },
   ],
   },
@@ -50,17 +51,17 @@ const FeaturesSection = () => {
      {
         title: "Comprehensive Health Monitoring",
         description: "Track vital signs, activity levels, and sleep patterns to detect changes early and prevent risks before they escalate",
-        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&q=80&w=800",
+        image: "https://images.unsplash.com/photo-1634089916298-9fa27180526c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470",
       },
       {
         title: "Daily Connection Hub",
         description: "Send voice messages and receive smart reminders to maintain regular contact across time zones",
-        image: "https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?auto=format&fit=crop&q=80&w=800",
+        image: "https://images.unsplash.com/photo-1658909913848-1680f5d1af61?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470",
       },
       {
         title: "AI Health Reports", 
         description: "Receive clear insights about their wellbeing with personalized recommendations and alerts",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+        image: "https://images.unsplash.com/photo-1663661759279-5edbf3d58e0c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
       },
     ],
   },

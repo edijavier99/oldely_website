@@ -55,7 +55,7 @@ const ElderlyCareHero = () => {
               </button>
             </div>
             <p className="text-xs text-neutral-500 mt-5">
-             <span className='text-xs text-amber-600'>⚡</span>  Early access available Q1 2026 • Limited launch price: $19/mo 
+             <span className='text-xs text-amber-600'>⚡</span>  Early access available Q1 2026 • Limited launch price: £19/mo 
             </p>
 
           <div className="flex items-center  gap-3 mt-5">
