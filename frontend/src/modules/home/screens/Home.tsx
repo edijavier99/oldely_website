@@ -4,6 +4,7 @@ import FeaturesSection from "../components/FeaturesSection";
 import PeopleCarousel from "../components/PeopleCarousel";
 // import ReviewsCarousel from "../components/TestCarousel";
 import { SocialProofSection } from "../components/SocialProofSection";
+import Footer from "../components/Footer";
 
 const Home = () =>{
   return(

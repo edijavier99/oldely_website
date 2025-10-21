@@ -68,13 +68,13 @@ export const Footer = () => {
                 <img alt="oldely" src={logo}  className='h-8' />
         </div>
 
-        <LinkGroup title="Invest" links={[{ label: 'Sign Up', path: '#' }]} />
+        <LinkGroup title="Join Waitlist" links={[{ label: 'Early access', path: '#' }]} />
         <LinkGroup
           title="Company"
           links={[
-            { label: 'Privacy Policy', path: '/privacy-policy/' },
+            { label: 'Privacy Policy', path: '#' },
             { label: 'Legal Notice', path: '#' },
-            { label: 'Terms Of Services', path: '/terms-of-services/' },
+            { label: 'Terms Of Services', path: '#' },
           ]}
         />
         <SocialLinks />
