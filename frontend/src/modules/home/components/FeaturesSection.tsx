@@ -70,7 +70,7 @@ const FeaturesSection = () => {
   const currentContent = tabsContent[activeTab];
 
   return (
-    <div className="min-h-screen bg-black text-white p-6 md:p-12">
+    <div id='how-it-works' className="min-h-screen bg-black text-white p-6 md:p-12">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Featured Video */}

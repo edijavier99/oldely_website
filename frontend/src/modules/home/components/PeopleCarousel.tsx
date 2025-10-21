@@ -37,7 +37,7 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <section id='product' className="min-h-screen bg-white flex flex-col">
       {/* Header */}
       <header className="pt-20 pb-12 text-center px-4">
         <div className="inline-block px-4 py-1.5 bg-neutral-100 rounded-full mb-6 border border-neutral-200">
@@ -154,7 +154,7 @@ const BenefitsSection = () => {
 
       {/* Bottom Spacing */}
       <div className="h-20"></div>
-    </div>
+    </section>
   );
 };
 
