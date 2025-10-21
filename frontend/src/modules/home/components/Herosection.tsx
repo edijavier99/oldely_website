@@ -22,16 +22,16 @@ const ElderlyCareHero = () => {
   return (
    <div className="min-h-[calc(100vh-80px)] bg-white grid grid-cols-1 lg:grid-cols-2 relative overflow-hidden">
       {/* Left Side - Content */}
-      <div className="relative z-10 flex flex-col items-start justify-center px-8 md:px-12 lg:px-16 xl:px-24 py-16 lg:py-0">
+      <div className="relative z-10  flex flex-col items-center lg:items-start justify-center px-8 md:px-12 lg:px-16 xl:px-24 py-16 lg:py-0">
 
       
         {/* Main Heading */}
-        <h1 className="text-center sm:text-left text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-light text-neutral-900 mb-6 tracking-tight leading-[1.1]">
+        <h1 className="text-center lg:text-left text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-light text-neutral-900 mb-6 tracking-tight leading-[1.1]">
             Stop Worrying About  
             <span className="block font-medium mt-2">Your Aging Parents On Your Own</span>
           </h1>
 
-          <p className="text-center sm:text-left text-base md:text-lg text-neutral-600 leading-relaxed font-light mb-10 max-w-xl">
+          <p className="text-center lg:text-left text-base md:text-lg text-neutral-600 leading-relaxed font-light mb-10 max-w-xl">
             The 3 AM calls. The constant "what ifs". The guilt of being far away. 
             <strong> We've lived it too.</strong> Oldely gives you real-time peace of mind with a simple device they'll actually use.
           </p>
@@ -53,12 +53,12 @@ const ElderlyCareHero = () => {
                 Reserve Your Spot
               </button>
             </div>
-            <p className="text-xs text-neutral-500 mt-5">
+            <p className="text-xs text-center lg:text-left text-neutral-500 mt-5">
              <span className='text-xs text-amber-600'>⚡</span>  Early access available Q1 2026 • Limited launch price: £19/mo 
             </p>
 
-          <div className="flex items-center  gap-3 mt-5">
-            <div className="flex -space-x-2">
+          <div className="flex w-full justify-center lg:justify-start  items-center gap-3 mt-5">
+            <div className="flex  -space-x-2">
               {[1, 2, 3, 4].map((i) => (
                 <div
                   key={i}
