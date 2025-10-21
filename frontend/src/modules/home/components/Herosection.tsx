@@ -23,34 +23,19 @@ const ElderlyCareHero = () => {
    <div className="min-h-[calc(100vh-80px)] bg-white grid grid-cols-1 lg:grid-cols-2 relative overflow-hidden">
       {/* Left Side - Content */}
       <div className="relative z-10 flex flex-col items-start justify-center px-8 md:px-12 lg:px-16 xl:px-24 py-16 lg:py-0">
-{/*       
 
-         <div className="flex items-center justify-center gap-3 mb-12">
-           <div className="flex -space-x-2">
-             {[1, 2, 3, 4].map((i) => (
-              <div
-                key={i}
-                className="w-8 h-8 rounded-full bg-gradient-to-br from-neutral-200 to-neutral-400 border-2 border-white"
-              />
-            ))}
-          </div>
-          <span className="text-sm text-black/50 font-light">
-            Only 100 Spots Available
-          </span>
-        </div> */}
-
+      
 
         {/* Main Heading */}
-        <h1 className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl xl:text-7xl font-light text-neutral-900 mb-6 tracking-tight leading-[1.1]">
-          Care and connection for the
-          <span className="block font-medium mt-2">older generation</span>
-        </h1>
+        <h1 className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-light text-neutral-900 mb-6 tracking-tight leading-[1.1]">
+            Stop Worrying About  
+            <span className="block font-medium mt-2">Your Aging Parents On Your Own</span>
+          </h1>
 
-        {/* Description */}
-        <p className="text-base md:text-lg text-neutral-600 leading-relaxed font-light mb-10 max-w-xl">
-          A discreet companion offering proactive safety, wellness monitoring, and natural voice communication. Peace of mind for families, independence for them.
-        </p>
-
+          <p className="text-base md:text-lg text-neutral-600 leading-relaxed font-light mb-10 max-w-xl">
+            The 3 AM calls. The constant "what ifs". The guilt of being far away. 
+            <strong> We've lived it too.</strong> Oldely gives you real-time peace of mind with a simple device they'll actually use.
+          </p>
         {/* Email Form */}
         {!isSubmitted ? (
           <form onSubmit={handleSubmit} className="w-full max-w-xl">
@@ -59,7 +44,7 @@ const ElderlyCareHero = () => {
                 type="email"
                 value={email}
                 onChange={handleChange}
-                placeholder="your@email.com"
+                placeholder="Enter your email"
                 className="flex-1 px-6 py-4 bg-neutral-50 border border-neutral-200 rounded-full text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-neutral-400 focus:bg-white transition-all duration-300"
               />
               <button
@@ -69,9 +54,24 @@ const ElderlyCareHero = () => {
                 Reserve Your Spot
               </button>
             </div>
-            <p className="text-xs text-neutral-500 mt-3 ml-6">
-              Early access • Available Q1 2026
+            <p className="text-xs text-neutral-500 mt-5">
+             <span className='text-xs text-amber-600'>⚡</span>  Early access available Q1 2026 • Limited launch price: $19/mo 
             </p>
+
+          <div className="flex items-center  gap-3 mt-5">
+            <div className="flex -space-x-2">
+              {[1, 2, 3, 4].map((i) => (
+                <div
+                  key={i}
+                  className="w-8 h-8 rounded-full bg-gradient-to-br from-neutral-200 to-neutral-400 border-2 border-white"
+                />
+              ))}
+            </div>
+            <span className="text-sm text-black/50 font-light">
+              Only 100 Spots Available
+            </span>
+          </div>
+        
           </form>
         ) : (
           <div className="w-full max-w-xl p-6 bg-neutral-50 border border-neutral-200 rounded-2xl">
@@ -130,6 +130,9 @@ const ElderlyCareHero = () => {
 };
 
 export default ElderlyCareHero;
+
+
+
 
 
 "They cared for us, now it's our turn to care for them."

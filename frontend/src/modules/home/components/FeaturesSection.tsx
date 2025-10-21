@@ -20,52 +20,50 @@ const FeaturesSection = () => {
   const [activeTab, setActiveTab] = useState<TabKey>('them');
 
   const tabsContent: Record<TabKey, TabContent> = {
-    them: {
-      title: "They Live Safely",
-      subtitle: "You Stay Connected",
-      description:
-        "A discreet companion that respects their autonomy while keeping them safe. Voice-first technology they can actually use - no apps, no confusion.",
-      cards: [
-        {
-          title: "Wellness Check-ins",
-          description: "Daily voice conversations that monitor health and mood naturally",
-          image: "https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?auto=format&fit=crop&q=80&w=800",
-        },
-        {
-          title: "Emergency Response",
-          description: "Instant family alerts when they need help most",
-          image: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=800",
-        },
-        {
-          title: "Medication Reminders",
-          description: "Gentle voice prompts in their native language",
-          image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&q=80&w=800",
-        },
-      ],
+  them: {
+    title: "Designed for Real Life",
+    subtitle: "Not Tech Geniuses",
+    description: "We watched our grandma struggle with smartphones. So we built something she could use with zero learning.",
+     cards: [
+    {
+      title: "Emergency Response",
+      description: "One-touch SOS button and automatic fall detection that instantly alerts family members",
+      image: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=800",
     },
+    {
+      title: "Voice Command Center", 
+      description: "Call family or listen to messages using simple voice commands - no buttons or complicated screen to remember",
+      image: "https://images.unsplash.com/photo-1583391738853-47b205ec5d1c?auto=format&fit=crop&q=80&w=800",
+    },
+    {
+      title: "Always-On Protection",
+      description: "Continuous monitoring that works discreetly in the background, respecting their privacy",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800",
+    },
+  ],
+  },
     you: {
-      title: "You Stay Connected",
-      subtitle: "They Live Safely",
-      description:
-        "The peace of mind of having them close and caring for their wellbeing, even when distance separates you. Created by a long-distance family, for all families.",
-      cards: [
-        {
-          title: "Activity Insights",
-          description: "Track daily patterns and wellness trends over time",
-          image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
-        },
-        {
-          title: "Smart Alerts",
-          description: "Notifications only when something truly needs attention",
-          image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&q=80&w=800",
-        },
-        {
-          title: "Family Network",
-          description: "Share updates with siblings, caregivers across time zones",
-          image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800",
-        },
-      ],
-    },
+     title: "Peace of Mind",
+    subtitle: "Delivered Daily",
+    description: "Wake up knowing they're safe. Go to bed without that knot in your stomach. Connected even when you’re miles apart.",
+    cards: [
+     {
+        title: "Comprehensive Health Monitoring",
+        description: "Track vital signs, activity levels, and sleep patterns to detect changes early and prevent risks before they escalate",
+        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&q=80&w=800",
+      },
+      {
+        title: "Daily Connection Hub",
+        description: "Send voice messages and receive smart reminders to maintain regular contact across time zones",
+        image: "https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?auto=format&fit=crop&q=80&w=800",
+      },
+      {
+        title: "AI Health Reports", 
+        description: "Receive clear insights about their wellbeing with personalized recommendations and alerts",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+      },
+    ],
+  },
   };
 
   const currentContent = tabsContent[activeTab];
@@ -92,7 +90,7 @@ const FeaturesSection = () => {
             <div className="absolute bottom-0 left-0 right-0 p-8 z-10">
               <div className="inline-block px-3 py-1 bg-white/10 backdrop-blur-md rounded-full mb-4">
                 <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-white/90">
-                  {activeTab === 'them' ? 'Their Experience' : 'Your Dashboard'}
+                  {activeTab === 'them' ? 'Their Independence' : 'Your Peace of Mind'}
                 </span>
               </div>
               <h2 className="text-3xl font-light mb-2 tracking-tight">{currentContent.title}</h2>
@@ -165,7 +163,7 @@ const FeaturesSection = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-4">
                     <h3 className="font-medium text-sm mb-1 tracking-tight">{card.title}</h3>
-                    <p className="text-[10px] font-light text-white/60 leading-relaxed">
+                    <p className="sm:text-[10px] font-light text-white/70 leading-relaxed">
                       {card.description}
                     </p>
                   </div>
