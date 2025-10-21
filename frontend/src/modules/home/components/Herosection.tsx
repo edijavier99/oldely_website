@@ -26,7 +26,7 @@ const ElderlyCareHero = () => {
 
       
         {/* Main Heading */}
-        <h1 className="text-center sm:text-left text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-light text-neutral-900 mb-6 tracking-tight leading-[1.1]">
+        <h1 className="text-center sm:text-left text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-light text-neutral-900 mb-6 tracking-tight leading-[1.1]">
             Stop Worrying About  
             <span className="block font-medium mt-2">Your Aging Parents On Your Own</span>
           </h1>
