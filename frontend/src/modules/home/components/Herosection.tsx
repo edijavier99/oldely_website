@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import familyVideo from "../../../assets/familyVideo2.mp4"
+import miniLogo from "@/assets/miniLogo.svg"
 
 
 const ElderlyCareHero = () => {
@@ -91,12 +92,25 @@ const ElderlyCareHero = () => {
       <div className="relative h-[50vh] lg:h-full p-5">
         {/* Overlay text on video */}
         <div className="absolute top-12 left-12 right-12 z-20">
-          <div className="inline-block px-3 py-1.5 bg-white/90 backdrop-blur-md rounded-full border border-neutral-200">
-            <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-neutral-700">
-              Independence + Safety
-            </span>
+          <div className="flex items-center justify-between">
+            {/* Texto */}
+            <div className="inline-block px-3 py-1.5 bg-white/90 backdrop-blur-md rounded-full border border-neutral-200">
+              <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-neutral-700">
+                Independence + Safety
+              </span>
+            </div>
+
+            {/* Logo circular */}
+            <div className="inline-flex items-center justify-center w-7 h-7 bg-white rounded-full border border-neutral-200">
+              <img
+                src={miniLogo}
+                alt="oldely-logo"
+                className="w-4 h-4"
+              />
+            </div>
           </div>
         </div>
+
 
         <div className="relative w-full h-full overflow-hidden rounded-xl">
           <video

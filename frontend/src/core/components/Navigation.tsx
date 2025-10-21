@@ -20,6 +20,7 @@ const Navigation = () => {
             <img className="h-8" src={logov2} alt="Logo" />
           </Link>
 
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
@@ -80,3 +81,6 @@ const Navigation = () => {
 };
 
 export default Navigation;
+
+
+

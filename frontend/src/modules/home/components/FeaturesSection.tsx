@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import testVideo from "../../../assets/videoTest2.mp4";
 import sosimage from "../../../assets/sos.jpg"
+import miniLogo from "@/assets/miniLogo.svg"
 
 type Card = {
   title: string;
@@ -168,20 +169,12 @@ const FeaturesSection = () => {
                       {card.description}
                     </p>
                   </div>
-                  <div className="absolute top-3 right-3 w-7 h-7 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <svg
-                      className="w-3 h-3 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
+                  <div className="absolute top-3 right-3 w-7 h-7 bg-white backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <img
+                    src={miniLogo}
+                    alt="oldely-logo"
+                    className="w-4 h-4"
+                  />
                   </div>
                 </div>
               ))}
