@@ -25,14 +25,13 @@ const ElderlyCareHero = () => {
       <div className="relative z-10 flex flex-col items-start justify-center px-8 md:px-12 lg:px-16 xl:px-24 py-16 lg:py-0">
 
       
-
         {/* Main Heading */}
-        <h1 className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-light text-neutral-900 mb-6 tracking-tight leading-[1.1]">
+        <h1 className="text-center sm:text-left text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-light text-neutral-900 mb-6 tracking-tight leading-[1.1]">
             Stop Worrying About  
             <span className="block font-medium mt-2">Your Aging Parents On Your Own</span>
           </h1>
 
-          <p className="text-base md:text-lg text-neutral-600 leading-relaxed font-light mb-10 max-w-xl">
+          <p className="text-center sm:text-left text-base md:text-lg text-neutral-600 leading-relaxed font-light mb-10 max-w-xl">
             The 3 AM calls. The constant "what ifs". The guilt of being far away. 
             <strong> We've lived it too.</strong> Oldely gives you real-time peace of mind with a simple device they'll actually use.
           </p>
