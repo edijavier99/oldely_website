@@ -56,7 +56,7 @@ const BenefitsSection = () => {
           The peace of mind of having them close and caring for their wellbeing, even when distance separates you. Created by a long-distance family, for all families.        </p>
 
         <button className="px-10 py-4 bg-black text-white rounded-full text-sm font-medium tracking-wide transition-all duration-300 inline-flex items-center gap-3 hover:bg-neutral-800 hover:scale-105 group shadow-lg">
-          <span>Get Started</span>
+          <span>Join Waitlist</span>
           <svg 
             className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" 
             fill="none" 

@@ -138,7 +138,7 @@ const FeaturesSection = () => {
               <p className="text-base font-light text-white/60 leading-relaxed max-w-lg">
                 {currentContent.description}
               </p>
-              <button className="group inline-flex items-center gap-3 bg-white text-black px-8 py-3.5 rounded-full text-sm font-medium tracking-wide hover:bg-white/90 transition-all duration-300">
+              {/* <button className="group inline-flex items-center gap-3 bg-white text-black px-8 py-3.5 rounded-full text-sm font-medium tracking-wide hover:bg-white/90 transition-all duration-300">
                 LEARN MORE
                 <svg
                   className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
@@ -148,7 +148,7 @@ const FeaturesSection = () => {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </button>
+              </button> */}
             </div>
 
             <div className="grid sm:grid-cols-3 gap-3">
