@@ -1,18 +1,38 @@
 import { useState } from 'react';
 import familyVideo from "../../../assets/familyVideo2.mp4"
 import miniLogo from "@/assets/miniLogo.svg"
+import {supabase } from "../../../core/lib/supabaseClient.ts"
+import { toast } from "sonner";
+
 
 
 const ElderlyCareHero = () => {
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    if (email) {
+    if (!email) return;
+
+    const { error } = await supabase
+      .from('waitlist')
+      .insert([{ email }]);
+
+    if (error) {
+      if (error.code === '23505') {
+        // Duplicate email
+        toast.error("This email is already on the list!");
+      } else {
+        // Other errors
+        console.error('Error inserting email:', error.message);
+        toast.error("There was a problem. Please try again.");
+      }
+    } else {
       setIsSubmitted(true);
+      toast.success("You're on the list! We'll notify you soon.");
     }
   };
+
 
    const handleChange = (e:any) => {
     setEmail(e.target.value);
@@ -83,7 +103,7 @@ const ElderlyCareHero = () => {
               </div>
               <span className="font-medium">You're on the list!</span>
             </div>
-            <p className="text-sm text-neutral-600 ml-11">We'll notify you when we launch.</p>
+            <p className="text-sm text-neutral-600 ml-11">We'll notify you of the latest updates and when we launch.</p>
           </div>
         )}
       </div>
