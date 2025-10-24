@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import logov2 from "@/assets/oldelyv2.jpg";
 import { Link } from 'react-router-dom';
+import WaitlistFlow from '../../modules/home/components/WaitlistFlow';
+
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,9 +38,7 @@ const Navigation = () => {
 
           {/* CTA Button Desktop */}
           <div className="hidden md:flex items-center gap-4">
-            <button className="px-6 py-2.5 bg-neutral-900 text-white rounded-full text-sm font-medium hover:bg-neutral-800 transition-all duration-300 shadow-sm hover:shadow-md">
-              Join the waitlist
-            </button>
+
           </div>
 
           {/* Mobile Menu Button */}
@@ -69,9 +69,7 @@ const Navigation = () => {
                   {link.name}
                 </a>
               ))}
-              <button className="mt-2 w-full px-6 py-2.5 bg-neutral-900 text-white rounded-full text-sm font-medium hover:bg-neutral-800 transition-all duration-300">
-                Join the waitlist
-              </button>
+            <WaitlistFlow buttonClassName="flex items-center justify-center" buttonLabel="Join Waitlist" />
             </div>
           </div>
         )}

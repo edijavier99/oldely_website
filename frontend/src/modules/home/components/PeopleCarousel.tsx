@@ -1,7 +1,9 @@
 import { MessageCircle, Globe, Heart, Activity } from 'lucide-react';
 import iaabuelo from "../../../assets/gptAbuelo.png"
+import WaitlistFlow from './WaitlistFlow';
 
 const BenefitsSection = () => {
+
 
   const features = [
     {
@@ -54,19 +56,17 @@ const BenefitsSection = () => {
 
         <p className="text-base md:text-lg text-neutral-500 max-w-xl mx-auto leading-relaxed font-light mb-12">
           The peace of mind of having them close and caring for their wellbeing, even when distance separates you. Created by a long-distance family, for all families.        </p>
-
-        <button className="px-10 py-4 bg-black text-white rounded-full text-sm font-medium tracking-wide transition-all duration-300 inline-flex items-center gap-3 hover:bg-neutral-800 hover:scale-105 group shadow-lg">
-          <span>Join Waitlist</span>
-          <svg 
-            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
+           
+      <WaitlistFlow buttonClassName="mx-auto flex items-center justify-center" buttonLabel="Join Waitlist" />
+  
       </header>
+
+   
+
+
+
+
+      
 
       {/* Features Grid */}
       <section className="py-16 px-4">

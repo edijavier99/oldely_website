@@ -1,7 +1,5 @@
 import { useState } from "react";
-import { supabase } from "../../../core/lib/supabaseClient.ts";
-import { toast } from "sonner";
-
+import EmailInputForm from "./EmailInputForm.tsx";
 
 interface Props {
     onSuccess: (email: string) => void; // <-- cambia esto
@@ -9,56 +7,19 @@ interface Props {
 
 const WaitlistForm = ({ onSuccess }: Props) => {
 
-  const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    setIsSubmitting(true)
-
-    const { error } = await supabase
-      .from('waitlist')
-      .insert([{ email }]);
-
-    if (error) {
-      if (error.code === '23505') {
-        toast.error("This email is already on the list!");
-      } else {
-        console.error('Error inserting email:', error.message);
-        toast.error("There was a problem. Please try again.");
-      }
-    } else {
-      setIsSubmitted(true);
-      onSuccess(email);
-    }
+  const handleSuccess = (email: string) => {
+    setIsSubmitted(true);
+    onSuccess(email);
   };
+
 
   return (
     <div className="w-full max-w-xl">
       {!isSubmitted ? (
-        <form onSubmit={handleSubmit}>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
-              className="flex-1 px-6 py-4 bg-neutral-50 border border-neutral-200 rounded-full text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-neutral-400 focus:bg-white transition-all duration-300"
-            />
-            <button
-              type="submit"
-              className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
-                isSubmitting
-                  ? 'bg-neutral-300 text-neutral-500 cursor-not-allowed'
-                  : 'bg-neutral-900 text-white hover:bg-neutral-800'
-              }`}
-            >
-              Reserve Your Spot
-            </button>
-          </div>
+        <>
+          <EmailInputForm  onSuccess={handleSuccess} />            
           <p className="text-xs text-center lg:text-left text-neutral-500 mt-5">
             <span className="text-xs text-amber-600">⚡</span> Early access available Q1 2026 • Limited launch price: £19/mo
           </p>
@@ -76,7 +37,7 @@ const WaitlistForm = ({ onSuccess }: Props) => {
               Only 100 Spots Available
             </span>
           </div>
-        </form>
+        </>
       ) : (
         <div className="w-full max-w-xl p-6 bg-neutral-50 border border-neutral-200 rounded-2xl">
           <div className="flex items-center gap-3 text-neutral-900 mb-2">
