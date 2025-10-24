@@ -1,49 +1,28 @@
-import { useState } from 'react';
 import familyVideo from "../../../assets/familyVideo2.mp4"
 import miniLogo from "@/assets/miniLogo.svg"
-import {supabase } from "../../../core/lib/supabaseClient.ts"
-import { toast } from "sonner";
-
-
+import WaitlistForm from '../form/WaitlistForm.tsx';
+import Modal from "../../../core/components/CustomModal.tsx";
+import { useState } from "react";
+import SurveyForm from "../form/SurveyForm.tsx";
 
 const ElderlyCareHero = () => {
-  const [email, setEmail] = useState('');
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isBasicOpen, setIsBasicOpen] = useState(false);
+  const [userEmail, setUserEmail] = useState<string | null>(null);
 
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
-    if (!email) return;
+  const handleOnSuccess = (email: string) => {
+  setUserEmail(email);
+  setIsBasicOpen(true);
+};
 
-    const { error } = await supabase
-      .from('waitlist')
-      .insert([{ email }]);
-
-    if (error) {
-      if (error.code === '23505') {
-        // Duplicate email
-        toast.error("This email is already on the list!");
-      } else {
-        // Other errors
-        console.error('Error inserting email:', error.message);
-        toast.error("There was a problem. Please try again.");
-      }
-    } else {
-      setIsSubmitted(true);
-      toast.success("You're on the list! We'll notify you soon.");
-    }
+  const handleSurveyComplete = () => {
+    setIsBasicOpen(false);
+    // Opcional: redirect o mostrar otro mensaje
   };
-
-
-   const handleChange = (e:any) => {
-    setEmail(e.target.value);
-  };
-
-
 
   return (
    <div className="min-h-[calc(100vh-80px)] bg-white grid grid-cols-1 lg:grid-cols-2 relative overflow-hidden">
       {/* Left Side - Content */}
-      <div className="relative z-10  flex flex-col items-center lg:items-start justify-center px-8 md:px-12 lg:px-16 xl:px-24 py-16 lg:py-0">
+      <div className="relative z-1  flex flex-col items-center lg:items-start justify-center px-8 md:px-12 lg:px-16 xl:px-24 py-16 lg:py-0">
 
       
         {/* Main Heading */}
@@ -57,61 +36,27 @@ const ElderlyCareHero = () => {
             <strong> We've lived it too.</strong> Oldely gives you real-time peace of mind with a simple device they'll actually use.
           </p>
         {/* Email Form */}
-        {!isSubmitted ? (
-          <form  onSubmit={handleSubmit} className="w-full max-w-xl">
-            <div className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                value={email}
-                onChange={handleChange}
-                placeholder="Enter your email"
-                className="flex-1 px-6 py-4 bg-neutral-50 border border-neutral-200 rounded-full text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-neutral-400 focus:bg-white transition-all duration-300"
-              />
-              <button
-                type="submit"
-                className="px-8 py-4 bg-neutral-900 text-white rounded-full text-sm font-medium tracking-wide hover:bg-neutral-800 transition-all duration-300 whitespace-nowrap shadow-lg hover:shadow-xl"
-              >
-                Reserve Your Spot
-              </button>
-            </div>
-            <p className="text-xs text-center lg:text-left text-neutral-500 mt-5">
-             <span className='text-xs text-amber-600'>⚡</span>  Early access available Q1 2026 • Limited launch price: £19/mo 
-            </p>
-
-          <div className="flex w-full justify-center lg:justify-start  items-center gap-3 mt-5">
-            <div className="flex  -space-x-2">
-              {[1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  className="w-8 h-8 rounded-full bg-gradient-to-br from-neutral-200 to-neutral-400 border-2 border-white"
-                />
-              ))}
-            </div>
-            <span className="text-sm text-black/50 font-light">
-              Only 100 Spots Available
-            </span>
-          </div>
+        <WaitlistForm  onSuccess={handleOnSuccess}/>
+       
+        <Modal
+          isOpen={isBasicOpen}
+          onClose={() => setIsBasicOpen(false)}
+          title="Welcome to Oldely"
+          size="md"
+          closeOnOverlayClick={false}
+        >
+          <SurveyForm 
+            email={userEmail || ""}
+            onComplete={handleSurveyComplete}
+          />
         
-          </form>
-        ) : (
-          <div className="w-full max-w-xl p-6 bg-neutral-50 border border-neutral-200 rounded-2xl">
-            <div className="flex items-center gap-3 text-neutral-900 mb-2">
-              <div className="w-8 h-8 rounded-full bg-neutral-900 flex items-center justify-center">
-                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
+        </Modal>
               </div>
-              <span className="font-medium">You're on the list!</span>
-            </div>
-            <p className="text-sm text-neutral-600 ml-11">We'll notify you of the latest updates and when we launch.</p>
-          </div>
-        )}
-      </div>
 
       {/* Right Side - Video */}
       <div className="relative h-[50vh] lg:h-full p-5">
         {/* Overlay text on video */}
-        <div className="absolute top-12 left-12 right-12 z-20">
+        <div className="absolute top-12 left-12 right-12 z-1">
           <div className="flex items-center justify-between">
             {/* Texto */}
             <div className="inline-block px-3 py-1.5 bg-white/90 backdrop-blur-md rounded-full border border-neutral-200">
@@ -149,7 +94,7 @@ const ElderlyCareHero = () => {
         </div>
 
         {/* Bottom text on video */}
-        <div className="absolute bottom-12 left-12 right-12 z-20">
+        <div className="absolute bottom-12 left-12 right-12 z-1">
           <p className="text-white text-sm font-light drop-shadow-lg">
             “Our elders are the source of our wisdom. Caring for them is honoring humanity itself.”
           </p>
