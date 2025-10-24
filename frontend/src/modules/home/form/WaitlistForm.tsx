@@ -11,11 +11,13 @@ const WaitlistForm = ({ onSuccess }: Props) => {
 
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
+    setIsSubmitting(true)
 
     const { error } = await supabase
       .from('waitlist')
@@ -48,7 +50,11 @@ const WaitlistForm = ({ onSuccess }: Props) => {
             />
             <button
               type="submit"
-              className="px-8 py-4 bg-neutral-900 text-white rounded-full text-sm font-medium tracking-wide hover:bg-neutral-800 transition-all duration-300 whitespace-nowrap shadow-lg hover:shadow-xl"
+              className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
+                isSubmitting
+                  ? 'bg-neutral-300 text-neutral-500 cursor-not-allowed'
+                  : 'bg-neutral-900 text-white hover:bg-neutral-800'
+              }`}
             >
               Reserve Your Spot
             </button>
