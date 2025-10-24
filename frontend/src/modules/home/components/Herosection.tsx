@@ -58,7 +58,7 @@ const ElderlyCareHero = () => {
           </p>
         {/* Email Form */}
         {!isSubmitted ? (
-          <form onSubmit={handleSubmit} className="w-full max-w-xl">
+          <form  onSubmit={handleSubmit} className="w-full max-w-xl">
             <div className="flex flex-col sm:flex-row gap-3">
               <input
                 type="email"
