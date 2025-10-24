@@ -4,7 +4,6 @@ import WaitlistForm from '../form/WaitlistForm.tsx';
 import Modal from "../../../core/components/CustomModal.tsx";
 import { useState } from "react";
 import SurveyForm from "../form/SurveyForm.tsx";
-import Footer from "./Footer.tsx";
 
 
 const ElderlyCareHero = () => {
