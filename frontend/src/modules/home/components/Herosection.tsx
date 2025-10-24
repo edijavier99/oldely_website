@@ -6,6 +6,7 @@ import { useState } from "react";
 import SurveyForm from "../form/SurveyForm.tsx";
 
 const ElderlyCareHero = () => {
+
   const [isBasicOpen, setIsBasicOpen] = useState(false);
   const [userEmail, setUserEmail] = useState<string | null>(null);
 
@@ -16,7 +17,7 @@ const ElderlyCareHero = () => {
 
   const handleSurveyComplete = () => {
     setIsBasicOpen(false);
-    // Opcional: redirect o mostrar otro mensaje
+    // Opcional: redirect o mostrar otro mensajee
   };
 
   return (
@@ -37,21 +38,7 @@ const ElderlyCareHero = () => {
           </p>
         {/* Email Form */}
         <WaitlistForm  onSuccess={handleOnSuccess}/>
-       
-        <Modal
-          isOpen={isBasicOpen}
-          onClose={() => setIsBasicOpen(false)}
-          title="Welcome to Oldely"
-          size="md"
-          closeOnOverlayClick={false}
-        >
-          <SurveyForm 
-            email={userEmail || ""}
-            onComplete={handleSurveyComplete}
-          />
-        
-        </Modal>
-              </div>
+      </div>
 
       {/* Right Side - Video */}
       <div className="relative h-[50vh] lg:h-full p-5">
@@ -103,6 +90,19 @@ const ElderlyCareHero = () => {
           </p>
         </div>
       </div>
+       <Modal
+          isOpen={isBasicOpen}
+          onClose={() => setIsBasicOpen(false)}
+          title="Welcome to Oldely"
+          size="md"
+          closeOnOverlayClick={false}
+        >
+          <SurveyForm 
+            email={userEmail || ""}
+            onComplete={handleSurveyComplete}
+          />
+        
+        </Modal>
     </div>
   );
 };
