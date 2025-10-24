@@ -30,9 +30,7 @@ const LinkGroup = ({
 
 const SocialLinks = () => {
   const socialLinks = [
-    { href: 'https://www.instagram.com/impresario.invest/', iconClass: 'fab fa-instagram', label: 'Instagram' },
-    { href: 'https://www.tiktok.com/@impresario_invest?_t=ZN-8wbLTZFW1FW&_r=1', iconClass: 'fab fa-tiktok', label: 'Twitter' },
-    { href: 'https://www.linkedin.com/company/107403231', iconClass: 'fab fa-linkedin', label: 'LinkedIn' }
+    { href: 'https://www.linkedin.com/company/oldely/', iconClass: 'fab fa-linkedin', label: 'LinkedIn' }
   ];
 
   return (
